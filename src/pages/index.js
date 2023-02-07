@@ -12,15 +12,15 @@ const Index = ({}) => {
     setLoading(true)
     const response = await fetch('/api/getPost', {
       method: 'POST',
-      body: JSON.stringify({ input: inputText }),
+      body: JSON.stringify({ input: `${inputText}.` }),
     })
     const data = await response.json()
-    setPostText(data.text)
+    setPostText(data.text.filter((t) => t.length > 0))
     setLoading(false)
   }
 
   const copyToClipboard = () => {
-    navigator.clipboard.writeText(postText)
+    navigator.clipboard.writeText(postText.join(' '))
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }
@@ -34,7 +34,7 @@ const Index = ({}) => {
         <div className='h-full flex flex-col items-center justify-center max-w-2xl p-10 mx-auto'>
           <h1 className='text-3xl font-bold mb-10'>LinkedIn-ify</h1>
           <form className='flex flex-col w-full'>
-            <label for='achievementText' className='pb-2'>
+            <label htmlFor='achievementText' className='pb-2'>
               Describe your achievement:
             </label>
             <textarea
