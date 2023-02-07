@@ -26,9 +26,35 @@ const Index = ({}) => {
     setTimeout(() => setCopied(false), 2000)
   }
 
+  const shareSheet = async () => {
+    try {
+      await navigator.share({ text: postText.join(' ') })
+    } catch {}
+  }
+
   return (
     <div>
       <Head>
+        <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no' />
+        <meta charSet='utf-8' />
+        <meta httpEquiv='x-ua-compatible' content='ie=edge' />
+        <meta name='apple-mobile-web-app-capable' content='yes' />
+        <meta name='apple-mobile-web-app-status-bar-style' content='black' />
+        <meta name='robots' content='follow, index' />
+        {/* <link rel='canonical' href={`https://ikartik.co${router.asPath}`} /> */}
+        {/* <meta property='og:url' content={`https://ikartik.co${router.asPath}`} />
+        <meta property='og:type' content={meta.type} /> */}
+        <meta property='og:site_name' content='iKartik' />
+        <meta property='og:description' content='Let GPT-3 help showcase your accomplishments in the best light on LinkedIn, no matter how big or small.' />
+        <meta property='og:title' content='LinkedIn-ify' />
+        <meta property='og:image' content='og.jpg' />
+        <meta name='twitter:card' content='summary_large_image' />
+        <meta name='twitter:site' content='@itskrtk' />
+        <meta name='twitter:title' content='LinkedIn-ify' />
+        <meta name='twitter:description' content='Let GPT-3 help showcase your accomplishments in the best light on LinkedIn, no matter how big or small.' />
+        <meta name='twitter:image' content='og.jpg' />
+        <meta name='description' content='Let GPT-3 help showcase your accomplishments in the best light on LinkedIn, no matter how big or small.' />
+        <meta name='keywords' content='gpt,gpt-3,openai,chatgpt,linkedin,ai,ml,machine learning,artificial intelligence' />
         <title>LinkedIn-ify</title>
       </Head>
       <div>
@@ -52,7 +78,7 @@ const Index = ({}) => {
               Share your achievement <br />
               the LinkedIn way
             </h1>
-            <h2 className='text-lg sm:text-xl mb-10 text-center'>Let GPT-3 showcase your accomplishments in the best light, no matter how big or small.</h2>
+            <h2 className='text-lg sm:text-xl mb-10 text-center'>Let GPT-3 help showcase your accomplishments in the best light, no matter how big or small.</h2>
             <form className='flex flex-col w-full'>
               <label htmlFor='achievementText' className='pb-2'>
                 Describe your achievement:
@@ -90,13 +116,18 @@ const Index = ({}) => {
                       ))}
                 </div>
                 {!isLoading && (
-                  <button
-                    className='mt-10 bg-slate-50 hover:bg-slate-200 text-black font-medium shadow-lg py-4 px-8 rounded-xl duration-300 disabled:bg-teal-300'
-                    disabled={hasCopied}
-                    onClick={copyToClipboard}
-                  >
-                    {hasCopied ? 'Copied!' : 'Copy post'}
-                  </button>
+                  <div className='flex justify-around my-5'>
+                    <button
+                      className='bg-slate-100 hover:bg-slate-200 text-black font-medium shadow-lg py-4 px-8 rounded-xl duration-300 disabled:bg-teal-300'
+                      disabled={hasCopied}
+                      onClick={copyToClipboard}
+                    >
+                      {hasCopied ? 'Copied!' : 'Copy'}
+                    </button>
+                    <button className='bg-slate-100 hover:bg-slate-200 text-black font-medium shadow-lg py-4 px-8 rounded-xl duration-300 disabled:bg-teal-300' onClick={shareSheet}>
+                      Share
+                    </button>
+                  </div>
                 )}
               </>
             )}
