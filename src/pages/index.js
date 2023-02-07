@@ -41,18 +41,18 @@ const Index = ({}) => {
         <meta name='apple-mobile-web-app-capable' content='yes' />
         <meta name='apple-mobile-web-app-status-bar-style' content='black' />
         <meta name='robots' content='follow, index' />
-        {/* <link rel='canonical' href={`https://ikartik.co${router.asPath}`} /> */}
-        {/* <meta property='og:url' content={`https://ikartik.co${router.asPath}`} />
+        {/* <link rel='canonical' href={`https://ikartik.com${router.asPath}`} /> */}
+        {/* <meta property='og:url' content={`https://ikartik.com${router.asPath}`} />
         <meta property='og:type' content={meta.type} /> */}
         <meta property='og:site_name' content='iKartik' />
         <meta property='og:description' content='Let GPT-3 help showcase your accomplishments in the best light on LinkedIn, no matter how big or small.' />
         <meta property='og:title' content='LinkedIn-ify' />
-        <meta property='og:image' content='og.jpg' />
+        <meta property='og:image' content='https://gpt-linkedin-ikartik.vercel.app/og.jpg' />
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:site' content='@itskrtk' />
         <meta name='twitter:title' content='LinkedIn-ify' />
         <meta name='twitter:description' content='Let GPT-3 help showcase your accomplishments in the best light on LinkedIn, no matter how big or small.' />
-        <meta name='twitter:image' content='og.jpg' />
+        <meta name='twitter:image' content='https://gpt-linkedin-ikartik.vercel.app/og.jpg' />
         <meta name='description' content='Let GPT-3 help showcase your accomplishments in the best light on LinkedIn, no matter how big or small.' />
         <meta name='keywords' content='gpt,gpt-3,openai,chatgpt,linkedin,ai,ml,machine learning,artificial intelligence' />
         <title>LinkedIn-ify</title>
