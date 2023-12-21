@@ -1,4 +1,4 @@
-## [https://gpt-linkedin.vercel.app](https://gpt-linkedin.vercel.app)
+## Live demo : [https://gpt-linkedin.vercel.app](https://gpt-linkedin.vercel.app)
 
 Using OpenAI's GPT-3 API, this app creates a stereotypical LinkedIn post (attributes include over-exaggeration, unrelated inspirational quotes, etc.) based on a prompt from the user.
 
